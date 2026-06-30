@@ -81,6 +81,14 @@ Get movie recommendations based on your library. The engine:
 
 Pass an optional `theme` (e.g. `"time loops"`, `"lovecraftian horror"`) to bias results toward a specific concept instead.
 
+### `export_library`
+Serializes your `movies` table to `library.json` (sorted by title), then commits and pushes it to GitHub. If nothing changed, the push is skipped.
+
+### `import_library`
+Runs `git pull`, reads `library.json`, and upserts all entries into your local database. Safe to run on a fresh machine — existing rows are updated, new rows are inserted.
+
+> **Note:** The TMDB cache is not synced — each machine rebuilds it on demand when you first access a movie.
+
 ## Development
 
 ```bash

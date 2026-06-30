@@ -11,6 +11,7 @@ import {
   getMovieSchema, handleGetMovie,
 } from './tools/movies.js';
 import { getRecommendationsSchema, handleGetRecommendations } from './tools/recommendations.js';
+import { exportLibrarySchema, handleExportLibrary, importLibrarySchema, handleImportLibrary } from './tools/library.js';
 
 if (!process.env['TMDB_API_KEY']) {
   console.error('Error: TMDB_API_KEY environment variable is required');
@@ -54,6 +55,16 @@ server.tool('get_movie', 'Get full details for a movie in your library including
 
 server.tool('get_recommendations', 'Get movie recommendations based on your library. Optionally provide a theme to bias results.', getRecommendationsSchema.shape, async (args) => {
   const result = await handleGetRecommendations(args);
+  return { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }] };
+});
+
+server.tool('export_library', 'Save your movie library to library.json, commit, and push to GitHub', exportLibrarySchema.shape, async () => {
+  const result = handleExportLibrary();
+  return { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }] };
+});
+
+server.tool('import_library', 'Pull the latest library.json from GitHub and sync into your local database', importLibrarySchema.shape, async () => {
+  const result = handleImportLibrary();
   return { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }] };
 });
 
