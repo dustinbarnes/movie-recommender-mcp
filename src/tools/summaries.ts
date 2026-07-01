@@ -10,9 +10,20 @@ export const fetchMovieSummarySchema = z.object({
 });
 
 function cleanSummary(raw: string): string {
-  // Strip Google UI noise (share/feedback widgets) after the actual AI content
+  // Strip Google UI noise after the actual AI content
   const cutoff = raw.indexOf('\nCopy\n\n# Share public link');
-  return cutoff !== -1 ? raw.slice(0, cutoff).trim() : raw.trim();
+  let text = cutoff !== -1 ? raw.slice(0, cutoff) : raw;
+
+  // Strip backtick-wrapped citation refs e.g. `[1][2][3]`
+  text = text.replace(/`(\[\d+\])+`/g, '');
+  // Strip plain inline citation refs e.g. [1][2]
+  text = text.replace(/(\[\d+\])+/g, '');
+  // Strip emojis
+  text = text.replace(/[\u{1F000}-\u{1FFFF}\u{2600}-\u{27BF}\u{FE00}-\u{FEFF}]/gu, '');
+  // Clean up trailing whitespace and excess blank lines left behind
+  text = text.replace(/[^\S\n]+\n/g, '\n').replace(/\n{3,}/g, '\n\n').trim();
+
+  return text;
 }
 
 export function handleFetchMovieSummary(args: z.infer<typeof fetchMovieSummarySchema>) {
