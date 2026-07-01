@@ -51,8 +51,10 @@ async function tmdbFetch<T>(path: string, params: Record<string, string> = {}): 
   return res.json() as Promise<T>;
 }
 
-export async function searchMovies(query: string): Promise<TmdbSearchResult[]> {
-  const data = await tmdbFetch<{ results: TmdbSearchResult[] }>('/search/movie', { query, include_adult: 'false' });
+export async function searchMovies(query: string, year?: number): Promise<TmdbSearchResult[]> {
+  const params: Record<string, string> = { query, include_adult: 'false' };
+  if (year) params['year'] = String(year);
+  const data = await tmdbFetch<{ results: TmdbSearchResult[] }>('/search/movie', params);
   return data.results.slice(0, 5);
 }
 

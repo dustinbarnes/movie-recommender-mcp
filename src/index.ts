@@ -2,7 +2,7 @@ import 'dotenv/config';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 
-import { searchMoviesSchema, handleSearchMovies } from './tools/search.js';
+import { searchMoviesSchema, handleSearchMovies, tmdbLookupSchema, handleTmdbLookup } from './tools/search.js';
 import {
   addMovieSchema, handleAddMovie,
   updateMovieSchema, handleUpdateMovie,
@@ -27,6 +27,11 @@ const server = new McpServer({
 server.tool('search_movies', 'Search TMDB for a movie by title to find its ID before adding', searchMoviesSchema.shape, async (args) => {
   const results = await handleSearchMovies(args);
   return { content: [{ type: 'text', text: JSON.stringify(results, null, 2) }] };
+});
+
+server.tool('tmdb_lookup', 'Get details for a known TMDB movie ID — use when search_movies returns no results', tmdbLookupSchema.shape, async (args) => {
+  const result = await handleTmdbLookup(args);
+  return { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }] };
 });
 
 server.tool('add_movie', 'Add a movie to your library with a rating and optional notes', addMovieSchema.shape, async (args) => {
