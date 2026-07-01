@@ -1,0 +1,245 @@
+[
+  {
+    "tmdb_id": 348,
+    "title": "Alien",
+    "year": 1979,
+    "status": "double_up",
+    "use_for_recs": true,
+    "notes": "Cosmic horror, practical effects, slow burn dread, badass woman protagonist, xenomorph mythology.",
+    "added_at": "2026-06-26 04:08:26"
+  },
+  {
+    "tmdb_id": 679,
+    "title": "Aliens",
+    "year": 1986,
+    "status": "double_up",
+    "use_for_recs": true,
+    "notes": "More action than horror but Ripley is iconic, badass woman protagonist, xenomorph mythology.",
+    "added_at": "2026-06-26 04:09:13"
+  },
+  {
+    "tmdb_id": 300668,
+    "title": "Annihilation",
+    "year": 2018,
+    "status": "double_up",
+    "use_for_recs": true,
+    "notes": "Loved the slow burn and the sense of dread throughout. The lighthouse sequence is one of the most unsettling things I've seen. Fascinates me how it deals with identity and self-destruction.",
+    "added_at": "2026-06-25 06:06:57"
+  },
+  {
+    "tmdb_id": 530351,
+    "title": "Bad Hair",
+    "year": 2021,
+    "status": "up",
+    "use_for_recs": true,
+    "notes": "Body horror, social commentary, nice amount of camp.",
+    "added_at": "2026-06-26 04:12:11"
+  },
+  {
+    "tmdb_id": 44214,
+    "title": "Black Swan",
+    "year": 2010,
+    "status": "double_up",
+    "use_for_recs": true,
+    "notes": "Identity dissolution, obsession spiraling into self-destruction, psychological horror. Reality unraveling in the same vein as Annihilation and Pi.",
+    "added_at": "2026-06-26 04:21:49"
+  },
+  {
+    "tmdb_id": 78,
+    "title": "Blade Runner",
+    "year": 1982,
+    "status": "double_up",
+    "use_for_recs": true,
+    "notes": "Atmospheric world-building, ambiguous ending, slow burn sci-fi, memorable antagonists. Prefer the Final Cut.",
+    "added_at": "2026-06-26 04:03:36"
+  },
+  {
+    "tmdb_id": 393345,
+    "title": "Cult of Chucky",
+    "year": 2017,
+    "status": "double_up",
+    "use_for_recs": true,
+    "notes": "Meta heavy, camp heavy. Child's Play universe, subverting expectations.",
+    "added_at": "2026-06-26 04:14:07"
+  },
+  {
+    "tmdb_id": 550,
+    "title": "Fight Club",
+    "year": 1999,
+    "status": "double_up",
+    "use_for_recs": true,
+    "notes": "Unreliable narrator, fractured identity, nihilism. Ambiguous ending and subverts expectations throughout. Meta in structure like Cabin in the Woods.",
+    "added_at": "2026-06-26 04:16:14"
+  },
+  {
+    "tmdb_id": 335796,
+    "title": "Ouija: Origin of Evil",
+    "year": 2016,
+    "status": "up",
+    "use_for_recs": true,
+    "notes": "Occult atmosphere, unsettling child performance, surprisingly good for a franchise prequel.",
+    "added_at": "2026-06-26 04:29:43"
+  },
+  {
+    "tmdb_id": 473,
+    "title": "Pi",
+    "year": 1998,
+    "status": "double_up",
+    "use_for_recs": true,
+    "notes": "Mathematical obsession spiraling into self-destruction. Paranoia and pattern-seeking as a form of madness. Aronofsky's raw lo-fi style amplifies the dread.",
+    "added_at": "2026-06-26 04:20:13"
+  },
+  {
+    "tmdb_id": 10189,
+    "title": "Pineapple Express",
+    "year": 2008,
+    "status": "up",
+    "use_for_recs": true,
+    "notes": "Funny stoner comedy, slapstick, video game references.",
+    "added_at": "2026-06-26 04:00:38"
+  },
+  {
+    "tmdb_id": 70981,
+    "title": "Prometheus",
+    "year": 2012,
+    "status": "double_up",
+    "use_for_recs": true,
+    "notes": "Cosmic horror, xenomorph mythology, questions about humanity's origins. Loves the big ideas even if the execution is uneven.",
+    "added_at": "2026-06-26 04:29:06"
+  },
+  {
+    "tmdb_id": 641,
+    "title": "Requiem for a Dream",
+    "year": 2000,
+    "status": "up",
+    "use_for_recs": false,
+    "notes": "Brutal portrait of addiction and self-destruction. Visceral and unforgettable but too bleak to use as a taste signal.",
+    "added_at": "2026-06-26 04:20:14"
+  },
+  {
+    "tmdb_id": 121606,
+    "title": "Resolution",
+    "year": 2013,
+    "status": "double_up",
+    "use_for_recs": true,
+    "notes": "Same connected universe as The Endless. Mind-bending, love how it plays with narrative and the mysterious force manipulating events.",
+    "added_at": "2026-06-26 03:58:57"
+  },
+  {
+    "tmdb_id": 805,
+    "title": "Rosemary's Baby",
+    "year": 1968,
+    "status": "up",
+    "use_for_recs": true,
+    "notes": "Polanski occult conspiracy, slow dread, ambiguous ending. Same atmosphere as The Ninth Gate.",
+    "added_at": "2026-06-26 04:24:10"
+  },
+  {
+    "tmdb_id": 11324,
+    "title": "Shutter Island",
+    "year": 2010,
+    "status": "up",
+    "use_for_recs": true,
+    "notes": "Unreliable narrator, ambiguous ending, psychological dread. Identity and reality dissolving in a confined setting.",
+    "added_at": "2026-06-26 04:16:13"
+  },
+  {
+    "tmdb_id": 882598,
+    "title": "Smile",
+    "year": 2022,
+    "status": "double_up",
+    "use_for_recs": true,
+    "notes": "Trauma horror, dread that sticks with you, possession. The entity as a manifestation of unprocessed trauma is a great concept.",
+    "added_at": "2026-06-26 04:26:59"
+  },
+  {
+    "tmdb_id": 397243,
+    "title": "The Autopsy of Jane Doe",
+    "year": 2016,
+    "status": "double_up",
+    "use_for_recs": true,
+    "notes": "Great atmospheric horror, occult themes, very slow burn.",
+    "added_at": "2026-06-26 04:05:25"
+  },
+  {
+    "tmdb_id": 731740,
+    "title": "The Block Island Sound",
+    "year": 2021,
+    "status": "up",
+    "use_for_recs": true,
+    "notes": "Atmospheric slow burn, alien influence/abduction. The person who was right all along trope done well. Cosmic dread without showing too much.",
+    "added_at": "2026-06-26 04:31:20"
+  },
+  {
+    "tmdb_id": 22970,
+    "title": "The Cabin in the Woods",
+    "year": 2012,
+    "status": "double_up",
+    "use_for_recs": true,
+    "notes": "Meta horror, love the mythology and world-building, non-happy ending.",
+    "added_at": "2026-06-26 04:07:16"
+  },
+  {
+    "tmdb_id": 430231,
+    "title": "The Endless",
+    "year": 2017,
+    "status": "double_up",
+    "use_for_recs": true,
+    "notes": "Loved the cosmic horror and time loop elements, loved the connected universe.",
+    "added_at": "2026-06-26 03:55:23"
+  },
+  {
+    "tmdb_id": 1381,
+    "title": "The Fountain",
+    "year": 2006,
+    "status": "up",
+    "use_for_recs": true,
+    "notes": "Slow burn cosmic meditation on mortality and love across three timelines. Surreal and ambitious.",
+    "added_at": "2026-06-26 04:21:50"
+  },
+  {
+    "tmdb_id": 622,
+    "title": "The Ninth Gate",
+    "year": 1999,
+    "status": "double_up",
+    "use_for_recs": true,
+    "notes": "Occult thriller, Polanski atmosphere, ambiguous ending. Slow burn with a genuinely unsettling mystery at its core.",
+    "added_at": "2026-06-26 04:23:07"
+  },
+  {
+    "tmdb_id": 694,
+    "title": "The Shining",
+    "year": 1980,
+    "status": "double_up",
+    "use_for_recs": true,
+    "notes": "Slow burn dread and isolation, ambiguous horror with no clean resolution. Practical sets and Kubrick's cold atmosphere make it deeply unsettling in the same way as The Thing.",
+    "added_at": "2026-06-26 04:16:12"
+  },
+  {
+    "tmdb_id": 1091,
+    "title": "The Thing",
+    "year": 1982,
+    "status": "double_up",
+    "use_for_recs": true,
+    "notes": "Paranoia and practical effects are unmatched. Cosmic horror, ambiguous ending.",
+    "added_at": "2026-06-26 04:02:25"
+  },
+  {
+    "tmdb_id": 46838,
+    "title": "Tucker and Dale vs. Evil",
+    "year": 2010,
+    "status": "double_up",
+    "use_for_recs": true,
+    "notes": "Love the horror comedy subversion, very rewatchable.",
+    "added_at": "2026-06-26 04:06:34"
+  },
+  {
+    "tmdb_id": 381283,
+    "title": "mother!",
+    "year": 2017,
+    "status": "watchlist",
+    "use_for_recs": true,
+    "notes": null,
+    "added_at": "2026-06-26 04:21:50"
+  }
+]
