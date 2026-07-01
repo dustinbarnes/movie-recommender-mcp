@@ -12,6 +12,7 @@ import {
 } from './tools/movies.js';
 import { getRecommendationsSchema, handleGetRecommendations } from './tools/recommendations.js';
 import { exportLibrarySchema, handleExportLibrary, importLibrarySchema, handleImportLibrary } from './tools/library.js';
+import { fetchMovieSummarySchema, handleFetchMovieSummary } from './tools/summaries.js';
 
 if (!process.env['TMDB_API_KEY']) {
   console.error('Error: TMDB_API_KEY environment variable is required');
@@ -65,6 +66,11 @@ server.tool('export_library', 'Save your movie library to library.json, commit, 
 
 server.tool('import_library', 'Pull the latest library.json from GitHub and sync into your local database', importLibrarySchema.shape, async () => {
   const result = handleImportLibrary();
+  return { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }] };
+});
+
+server.tool('fetch_movie_summary', 'Fetch a Google AI summary for a movie and save it as notes', fetchMovieSummarySchema.shape, async (args) => {
+  const result = handleFetchMovieSummary(args);
   return { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }] };
 });
 

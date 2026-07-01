@@ -81,6 +81,11 @@ Get movie recommendations based on your library. The engine:
 
 Pass an optional `theme` (e.g. `"time loops"`, `"lovecraftian horror"`) to bias results toward a specific concept instead.
 
+### `fetch_movie_summary`
+Queries Google's AI Mode for a synopsis and thematic breakdown of a movie, then saves the result as the movie's notes. Requires the [google-ai-mode-skill](https://github.com/PleasePrompto/google-ai-mode-skill) to be installed at `~/.claude/skills/google-ai-mode`.
+
+> **Note:** The `notes` field is intended for these AI-generated summaries. Run this after adding any new movie to populate it.
+
 ### `export_library`
 Serializes your `movies` table to `library.json` (sorted by title), then commits and pushes it to GitHub. If nothing changed, the push is skipped.
 
