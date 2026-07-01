@@ -9,6 +9,10 @@ export const fetchMovieSummarySchema = z.object({
   tmdb_id: z.number().describe('TMDB movie ID'),
 });
 
+export const googleSearchSchema = z.object({
+  query: z.string().describe('Search query to send to Google AI Mode'),
+});
+
 function cleanSummary(raw: string): string {
   // Strip Google UI noise after the actual AI content
   const cutoff = raw.indexOf('\nCopy\n\n# Share public link');
@@ -26,13 +30,8 @@ function cleanSummary(raw: string): string {
   return text;
 }
 
-export function handleFetchMovieSummary(args: z.infer<typeof fetchMovieSummarySchema>) {
-  const db = getDb();
-  const movie = db.prepare('SELECT * FROM movies WHERE tmdb_id = ?').get(args.tmdb_id) as MovieRow | undefined;
-  if (!movie) throw new Error(`Movie ${args.tmdb_id} not found in library`);
-
-  const query = `${movie.title}${movie.year ? ` ${movie.year}` : ''} film synopsis themes`;
-  const outPath = join(tmpdir(), `movie-summary-${args.tmdb_id}.md`);
+function runGoogleSearch(query: string): string {
+  const outPath = join(tmpdir(), `google-search-${Date.now()}.md`);
   const skillDir = join(process.env['HOME'] ?? '~', '.claude/skills/google-ai-mode');
 
   const result = spawnSync('python3', ['scripts/run.py', 'search.py', '--query', query, '--output', outPath], {
@@ -51,7 +50,22 @@ export function handleFetchMovieSummary(args: z.infer<typeof fetchMovieSummarySc
   const raw = readFileSync(outPath, 'utf-8');
   unlinkSync(outPath);
 
-  const summary = cleanSummary(raw);
+  return cleanSummary(raw);
+}
+
+export function handleGoogleSearch(args: z.infer<typeof googleSearchSchema>) {
+  const result = runGoogleSearch(args.query);
+  return { result };
+}
+
+export function handleFetchMovieSummary(args: z.infer<typeof fetchMovieSummarySchema>) {
+  const db = getDb();
+  const movie = db.prepare('SELECT * FROM movies WHERE tmdb_id = ?').get(args.tmdb_id) as MovieRow | undefined;
+  if (!movie) throw new Error(`Movie ${args.tmdb_id} not found in library`);
+
+  const query = `${movie.title}${movie.year ? ` ${movie.year}` : ''} film synopsis themes`;
+  const summary = runGoogleSearch(query);
+
   db.prepare('UPDATE movies SET notes = ? WHERE tmdb_id = ?').run(summary, args.tmdb_id);
 
   return { success: true, tmdb_id: args.tmdb_id, title: movie.title, summary };
